@@ -1,0 +1,97 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5 и CSS3 сайт</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>壽司店</span>
+    </div>
+    <div id="about">
+      <a href="#" title="目錄" onclick="slowScroll('#main')">目錄</a>
+      <a href="#" onclick="slowScroll('#聯繫人')" title="Контакты">聯繫人</a>
+      <a href="#" onclick="slowScroll('#常問問')" title="常問問">常問問題</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>最好吃的</h1>
+    <h3>分數</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>我們有最好的壽司！</h2>
+      <span>大而美味的選擇</span>
+    </div>
+    <div class="text">
+      <span>我們的商店將幫助您吃到美味的食物，以及選擇美味的壽司！</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>最好的</h2>
+    <h4>壽司!</h4>
+
+    <div class="img">
+      <img src="https://kingpizza.kh.ua/resources/products/20220211101757_728cea0f7d1.jpg" alt="">
+      <span>美味的壽司！</span>
+    </div>
+    <div class="img">
+      <img src="https://paperpaper.ru/wp-content/uploads/2019/10/1.jpg" alt="">
+      <span>最好的大師！</span>
+    </div>
+  </div>
+<div id="faq">
+    <div>
+      <span class="title">支付</span><br>
+      <span class="heading">付款將如何進行？</span>
+      <p>付款是這樣的。您為訂單付款，然後短信會發送到您的手機。您確認這是您的訂單。您正在等待快遞員。</p>
+      <span class="heading">Как будет проходит оплата?</span>
+      <p>Оплата такая. Вы оплачиваете заказ, и на ваш телефон приходит текстовое сообщение. Вы подтверждаете, что это ваш заказ.После этого вы ждете курьера.</p>
+    </div>
+    <div>
+      <span class="title">信息</span><br>
+      <span class="heading">服務中包含的內容а</span>
+      <p>我們出售最好和美味的壽司，以及水。</p>
+      <span class="heading">Что входит в услуги сервиса</span>
+      <p>Мы продаём лучшие и вкусные суши,а так же водичку.</p>
+    </div>
+    <div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+  <div id="contacts">
+    <center><h5>反饋</h5></center>
+    <form id="form_input">
+      <label for="name">姓名 <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">你的房間號是 <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">信息 <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">發送</div>
+    </form>
+  </div>
+</body>
+</html>
